@@ -1,0 +1,24 @@
+# Obsidian
+.obsidian/
+.trash/
+.vscode/
+
+# Git conflicts
+conflict-files-obsidian-git.md
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Log files
+*.log 
