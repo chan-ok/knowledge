@@ -22,3 +22,10 @@ Thumbs.db
 
 # Log files
 *.log 
+
+# Obsidian
+.obsidian/
+.trash/
+.makemd/
+.space/
+Tags
