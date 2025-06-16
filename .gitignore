@@ -25,3 +25,12 @@ dist-ssr
 
 *storybook.log
 storybook-static
+
+# Obsidian
+contents/.obsidian
+contents/.obsidian/*
+contents/.makemd
+contents/.makemd/*
+contents/.space
+contents/.space/*
+contents/Tags
