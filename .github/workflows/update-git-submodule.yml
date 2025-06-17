@@ -22,7 +22,7 @@ jobs:
 
       - name: Update submodule
         run: |
-          git submodule update --remote --merge
+          git submodule update --remote --rebase
 
       - name: Check for submodule change
         id: check_changes
