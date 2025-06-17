@@ -20,11 +20,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Update submodule
+      - name: Force update submodule to latest remote commit
         run: |
-          git submodule update --remote --rebase
+          git submodule update --init --remote
 
-      - name: Check for submodule change
+          # 강제 리셋으로 히스토리 충돌 회피
+          cd second-brain
+          git fetch origin
+          git reset --hard origin/main
+          cd ..
+
+          git add second-brain
+
+      - name: Check for submodule changes
         id: check_changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
@@ -36,6 +44,5 @@ jobs:
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
-          git add .
-          git commit -m "chore: update submodule to latest commit"
+          git commit -m "chore: force update submodule to latest commit"
           git push
