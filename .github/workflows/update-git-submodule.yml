@@ -25,12 +25,12 @@ jobs:
           git submodule update --init --remote
 
           # 강제 리셋으로 히스토리 충돌 회피
-          cd second-brain
+          cd contents
           git fetch origin
           git reset --hard origin/main
           cd ..
 
-          git add second-brain
+          git add contents
 
       - name: Check for submodule changes
         id: check_changes
