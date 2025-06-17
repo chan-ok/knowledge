@@ -20,11 +20,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Update submodule
+      - name: Update submodules to latest commit (safe mode)
         run: |
-          git submodule update --remote --merge
-
-      - name: Check for submodule change
+          git submodule update --init --remote
+      
+          # 서브모듈 브랜치 강제 설정 (필요한 경우)
+          cd second-brain
+          git checkout origin/main || git checkout main
+          cd -
+      
+      - name: Check for submodule changes
         id: check_changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
