@@ -10,4 +10,5 @@
 - [ ] 반응형 디자인 지향
 
 ## 배포관련
-- [ ] git submodule gitaction 설정하기
+- [x] git submodule gitaction 설정하기 -> 수동으로 관리, 메인 리포지터리 푸시 전에 훅 작성하기
+- [ ] husky 설정
